@@ -1,61 +1,27 @@
 #include <iostream>
 #include <stdio.h>
 
-using namespace std;
+typedef int (*pSUM_NEW) (int, int);
 
 
-typedef unsigned short int i_USHORT;
-/*
- * Function returns result of some basic maths operation on the two passed numbers based on
- * choice
- */
-int getMathResult(int a, int b, int8_t choice)
+int sum(int a, int b)
 {
-    switch (choice) {
-        case 1:
-            return a+b;
-            break;
-        case 2:
-            return a-b;
-            break;
-        case 3:
-            return a*b;
-            break;
-        case 4:
-            return a/b;
-            break;
-        case 5:
-            return a%b;
-            break;
-    }
-    //
-    return -1;
+    return a+b;
 }
 
-
-void testWrapAround(i_USHORT x)
+void printSum(int (*pSum) (int, int), int a, int b)
 {
-    cout << sizeof (i_USHORT) << endl;
+    printf("Sum using function pointer as param -> %d\n", pSum(a, b));
 }
 
-int main() {
-    std::cout << "Hello, World!" << std::endl;
-    printf("Hello World\n");
-    //
-    i_USHORT x = 250;
-    testWrapAround(x);
-    int a, b;
-    int8_t choice;
-    printf("Enter two numbers ->\n");
-    std::cin >> a;
-    std::cin >> b;
-    printf("[1: add, 2:subtract, 3:multiply, 4:divide, 5:remainder]\nEnter choice\n");
-    cin >> choice;
+int main()
+{
+    int (*pSumFunc) (int, int);
+    pSumFunc = sum;
+    printSum(pSumFunc, 10, 20);
 
-    auto res = getMathResult(a, b, choice);
-    cout << "Result : " << res << endl;
-
-    cout << sizeof(choice) << endl;
+    pSUM_NEW ptr = sum;
+    printf("Sum using typedef -> %d\n", ptr(50, 50));
 
     return 0;
 }
