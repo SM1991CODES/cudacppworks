@@ -1,3 +1,0 @@
-/home/sambit/CLionProjects/cudacppworks/cpp_learn/sams_21_days/day17/cmake-build-debug/CMakeFiles/day17.dir
-/home/sambit/CLionProjects/cudacppworks/cpp_learn/sams_21_days/day17/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/sambit/CLionProjects/cudacppworks/cpp_learn/sams_21_days/day17/cmake-build-debug/CMakeFiles/rebuild_cache.dir
