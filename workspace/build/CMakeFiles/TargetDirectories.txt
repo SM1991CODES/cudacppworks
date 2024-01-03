@@ -1,3 +1,0 @@
-/home/sambit/Documents/codeworks/cudacppworks/workspace/build/CMakeFiles/learncpp.dir
-/home/sambit/Documents/codeworks/cudacppworks/workspace/build/CMakeFiles/edit_cache.dir
-/home/sambit/Documents/codeworks/cudacppworks/workspace/build/CMakeFiles/rebuild_cache.dir
