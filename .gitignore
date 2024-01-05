@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+/workspace/out/build/x64-Debug
+/cuda_learn
+/cpp_learn/sams_21_days
+/.vs
+/cpp_studio_win/.vs
+/cpp_studio_win/out/build/x64-Debug
