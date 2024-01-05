@@ -36,3 +36,9 @@
 /.vs
 /cpp_studio_win/.vs
 /cpp_studio_win/out/build/x64-Debug
+.vscode/launch.json
+.vscode/launch.json
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+workspace/src/main

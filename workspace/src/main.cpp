@@ -92,7 +92,7 @@ void ranges()
     }
 }
 
-int main()
+int main(int argc, char *argv[])
 {
     cout << "Hello World\n";
     //
@@ -117,6 +117,13 @@ int main()
     // cout << "Float read -> " << f << endl;
     //
     ranges();
+    //
+    cout << "Number of commandline args -> " << argc << endl;
+    for(int i = 0; i < argc; i++)
+    {
+        cout << "cmdline " << i << " = " << argv[i] << endl;
+    }
+
 
     return 0;
 }
