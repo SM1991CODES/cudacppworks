@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <string>
+#include <memory>
 
 using namespace std;
 
@@ -133,6 +134,43 @@ int main(int argc, char *argv[])
     //
 
     pointertest();
+    //
+    unique_ptr<int> ptr1(new int()); // create uninit unique pointer
+    *ptr1 = 100;
+    cout << "&ptr1 = " << ptr1.get() << ", *ptr1 = " << *ptr1 << endl;
+
+    unique_ptr<int> ptr2 = make_unique<int>(99); // unique ptr with init value
+    cout << "&ptr2 = " << ptr2.get() << ", *ptr2 = " << *ptr2 << endl;
+
+    int data = 9;
+    unique_ptr<int> ptr3(&data); // create unique ptr for existing variable
+    cout << "&ptr3 = " << ptr3.get() << ", *ptr3 = " << *ptr3 << endl;
+
+    unique_ptr<int> ptr4;
+    ptr4 = move(ptr3);
+    if (ptr3 == nullptr)
+    {
+        cout << "unique_ptr ptr3 has been moved to unique_ptr ptr4 and hence is now a null_ptr" << endl;
+    }
+    else
+    {
+        cout << "WARNING: ptr3 should have been a null_ptr" << endl;
+    }
+    cout << "&ptr4 = " << ptr4.get() << ", *ptr4 = " << *ptr4 << endl;
+    //
+    int myVal = 25;
+    shared_ptr<int> sPtr1(new int(myVal));
+    cout << "use count => " << sPtr1.use_count() << ", value = " << *sPtr1 << endl;
+    *sPtr1 -= 1;
+    cout << "*sPtr1 = " << *sPtr1 << "value in myVal = " << myVal << endl;
+
+    shared_ptr<int> sPtr2 = sPtr1; // shared pointers can be copied, copies only address, not actual value
+    cout << "use count sPtr2 = " << sPtr2.use_count() << " use count sPtr1 = " << sPtr1.use_count() << endl;
+
+    sPtr2.reset(); // don't need this pointer to the data any more
+    cout << "use count sPtr2 = " << sPtr2.use_count() << endl;
+
+    cout << "use count sPtr1 = " << sPtr1.use_count() << endl;
 
 
     return 0;
