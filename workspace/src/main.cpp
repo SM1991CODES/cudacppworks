@@ -92,6 +92,13 @@ void ranges()
     }
 }
 
+void pointertest()
+{
+    int a = 345;
+    cout << "&a = " << &a << endl;
+}
+
+
 int main(int argc, char *argv[])
 {
     cout << "Hello World\n";
@@ -123,6 +130,9 @@ int main(int argc, char *argv[])
     {
         cout << "cmdline " << i << " = " << argv[i] << endl;
     }
+    //
+
+    pointertest();
 
 
     return 0;
